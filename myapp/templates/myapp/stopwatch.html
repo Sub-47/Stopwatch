@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stopwatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'myapp/css/stopwatch.css' %}">
+</head>
+<body>
+
+<div class="wrapper">
+
+  
+  <div class="card">
+    <div class="title">Stopwatch</div>
+
+    
+    <div class="ring-wrap">
+      <svg viewBox="0 0 220 220">
+        <circle class="ring-bg"       cx="110" cy="110" r="100"/>
+        <circle class="ring-progress" cx="110" cy="110" r="100" id="ringProgress"/>
+      </svg>
+      <div class="time-display">
+        <div class="time-main" id="timeMain">00:00</div>
+        <div class="time-ms"   id="timeMs"  >.00</div>
+      </div>
+    </div>
+
+    
+    <div class="controls">
+      <button class="btn btn--lap"   id="btnLap"   disabled>Lap</button>
+      <button class="btn btn--start" id="btnStart">Start</button>
+      <button class="btn btn--reset" id="btnReset" disabled>Reset</button>
+    </div>
+  </div>
+
+  <div class="laps-section" id="lapsSection" style="display:none;">
+    <div class="laps-header">
+      <span>Lap</span>
+      <span>+Lap</span>
+      <span>Total</span>
+    </div>
+    <div class="laps-list" id="lapsList"></div>
+  </div>
+
+</div>
+
+<script src="{% static 'myapp/js/stopwatch.js' %}"></script>
+</body>
+</html>
